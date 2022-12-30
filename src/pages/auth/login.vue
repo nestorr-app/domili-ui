@@ -68,7 +68,8 @@ useHead({
           <AnimatedLogo width="38px" height="38px" />
         </RouterLink>
       </div>
-      <div class="right">
+      <div class="right"></div>
+      <!-- <div class="right">
         <label
           class="dark-mode ml-auto"
           tabindex="0"
@@ -82,7 +83,7 @@ useHead({
           />
           <span></span>
         </label>
-      </div>
+      </div> -->
     </div>
 
     <!--Single Centered Form-->
