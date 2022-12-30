@@ -21,8 +21,6 @@ const notyf = useNotyf()
 const userSession = useUserSession()
 const redirect = route.query.redirect as string
 
-console.log(route)
-
 const handleLogin = async () => {
   if (isLoading.value) return
 
@@ -92,9 +90,9 @@ useHead({
       <div class="inner-wrap">
         <!--Form Title-->
         <div class="auth-head">
-          <h2>Welcome Back.</h2>
-          <p>Please sign in to your account</p>
-          <RouterLink to="/auth/signup-3"> I do not have an account yet </RouterLink>
+          <h2>Domili</h2>
+          <p>Se connecter à son compte</p>
+          <!-- <RouterLink to="/auth/signup-3"> I do not have an account yet </RouterLink> -->
         </div>
 
         <!--Form-->
@@ -123,11 +121,11 @@ useHead({
               </VField>
 
               <!-- Switch -->
-              <VField>
+              <!-- <VField>
                 <VControl class="setting-item">
                   <VCheckbox label="Remember me" color="primary" paddingless />
                 </VControl>
-              </VField>
+              </VField> -->
 
               <!-- Submit -->
               <div class="login">
@@ -139,16 +137,16 @@ useHead({
                   fullwidth
                   raised
                 >
-                  Sign In
+                  Se connecter
                 </VButton>
               </div>
             </div>
           </form>
         </div>
 
-        <div class="forgot-link has-text-centered">
+        <!-- <div class="forgot-link has-text-centered">
           <a>Forgot Password?</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
