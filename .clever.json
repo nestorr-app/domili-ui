@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_1d0fd308-fbe4-4c8a-9726-cb97f3de5b10",
+      "org_id": "orga_0b03f4a5-7af9-44de-b24c-cd1c3c1b348d",
+      "deploy_url": "https://github.com/nestorr-app/domili-ui.git",
+      "name": "domili-ui",
+      "alias": "domili-ui"
+    }
+  ]
+}
