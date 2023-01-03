@@ -41,6 +41,7 @@ declare module '@vue/runtime-core' {
     AvatarStackRegularDocumentation: typeof import('./documentation/avatar-stack/avatar-stack-regular-documentation.md')['default']
     AvatarStackSmallDocumentation: typeof import('./documentation/avatar-stack/avatar-stack-small-documentation.md')['default']
     BookPage: typeof import('./src/components/pages/books/BookPage.vue')['default']
+    BookPage2: typeof import('./src/components/pages/books/BookPage2.vue')['default']
     BooksListPage: typeof import('./src/components/pages/books/BooksListPage.vue')['default']
     BreadcrumbArrowDocumentation: typeof import('./documentation/breadcrumb/breadcrumb-arrow-documentation.md')['default']
     BreadcrumbBulletDocumentation: typeof import('./documentation/breadcrumb/breadcrumb-bullet-documentation.md')['default']
