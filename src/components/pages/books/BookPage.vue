@@ -135,11 +135,12 @@ onBeforeMount(async () => {
             </VLoader>
             <div v-else class="book-messages">
               <div
-                v-for="message in messages"
+                v-for="(message, i) in messages"
                 :key="message.id"
                 class="book-message"
                 :class="{
                   'is-sender-current-user': message.userId === currentUser.id,
+                  'is-same-sender': i > 0 && messages[i - 1].userId === message.userId,
                 }"
               >
                 <VFlex align-items="center" class="book-message-header">
@@ -148,18 +149,24 @@ onBeforeMount(async () => {
                     size="small"
                     color="h-blue"
                   />
-                  <div class="book-message-sender">
+                  <div class="book-message-sender-name">
+                    {{ message.user.firstname }} {{ message.user.lastname }}
+                  </div>
+                  <!-- <div class="book-message-sender">
                     <div class="book-message-sender-name">
                       {{ message.user.firstname }} {{ message.user.lastname }}
                     </div>
                     <div class="book-message-sender-datetime">
                       {{ message.formattedDate }}
                     </div>
-                  </div>
+                  </div> -->
                 </VFlex>
                 <VFlex class="book-message-content-wrapper">
                   <div class="book-message-content" v-html="message.htmlMessage"></div>
                 </VFlex>
+                <div class="book-message-sender-datetime">
+                  {{ message.formattedDate }}
+                </div>
               </div>
               <!-- <div v-for="message in messages" :key="message.id" class="book-message">
                 <VBlock
@@ -295,20 +302,23 @@ onBeforeMount(async () => {
       .book-message {
         margin-top: 30px;
 
-        .book-message-sender {
-          text-align: left;
-          margin: 0 10px;
-        }
+        // .book-message-sender {
+        //   text-align: left;
+        //   margin: 0 10px;
+        // }
 
         .book-message-sender-name {
           font-weight: bold;
-          // margin: 0 10px;
+          margin: 0 10px;
+          font-size: 1.2em;
         }
 
         .book-message-sender-datetime {
           color: var(--light-text);
           font-size: 0.8em;
-          margin-top: -3px;
+          text-align: left;
+          margin-left: 35px;
+          margin-right: 0px;
         }
 
         .book-message-content-wrapper {
@@ -319,7 +329,7 @@ onBeforeMount(async () => {
             border-radius: 0 20px 20px 20px;
             padding: 15px;
             margin: 8px 0 0 20px;
-            // width: 80%;
+            min-width: 125px;
             max-width: 600px;
             font-weight: 500;
           }
@@ -331,8 +341,10 @@ onBeforeMount(async () => {
             flex-direction: row-reverse;
           }
 
-          .book-message-sender {
+          .book-message-sender-datetime {
             text-align: right;
+            margin-left: 0px;
+            margin-right: 35px;
           }
 
           .book-message-content-wrapper {
@@ -344,6 +356,13 @@ onBeforeMount(async () => {
               color: white;
               margin: 5px 20px 0 0;
             }
+          }
+        }
+
+        &.is-same-sender {
+          margin-top: 0px;
+          .book-message-header {
+            display: none;
           }
         }
       }
