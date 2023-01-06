@@ -146,7 +146,7 @@ onBeforeMount(() => {
           margin-bottom: 5px;
           transition: all 0.3s; // transition-all test
 
-          &.router-link-exact-active {
+          &.router-link-active {
             box-shadow: var(--light-box-shadow);
             border-color: var(--fade-grey-dark-3);
 
@@ -160,7 +160,7 @@ onBeforeMount(() => {
             }
           }
 
-          &:not(.router-link-exact-active) {
+          &:not(.router-link-active) {
             &:hover {
               background: var(--fade-grey-light-3);
             }
@@ -202,6 +202,10 @@ onBeforeMount(() => {
       .form-head,
       .form-foot {
         padding: 12px 20px;
+
+        .form-head-inner {
+          min-height: 40px;
+        }
 
         .form-head-inner,
         .form-foot-inner {
@@ -379,7 +383,7 @@ onBeforeMount(() => {
       &.is-navigation {
         .account-menu {
           .account-menu-item {
-            &.router-link-exact-active {
+            &.router-link-active {
               background: var(--dark-sidebar-light-8);
               border-color: var(--dark-sidebar-light-12);
 
@@ -389,7 +393,7 @@ onBeforeMount(() => {
               }
             }
 
-            &:not(.router-link-exact-active) {
+            &:not(.router-link-active) {
               &:hover {
                 background: var(--dark-sidebar-light-10);
               }

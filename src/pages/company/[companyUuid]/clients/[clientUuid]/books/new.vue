@@ -21,13 +21,13 @@ async function saveClient() {
     <div class="form-head">
       <div class="form-head-inner">
         <div class="left">
-          <h3>Informations client</h3>
+          <h3>Nouveau carnet de liaison</h3>
         </div>
       </div>
     </div>
     <div class="form-body">
       <VField>
-        <VLabel>Nom du client</VLabel>
+        <VLabel>Pour le client</VLabel>
         <VControl>
           <VInput
             v-model="clientLabel"
@@ -40,7 +40,7 @@ async function saveClient() {
         </VControl>
       </VField>
       <VFlex justify-content="end" align-items="center" class="m-t-20">
-        <VButton color="primary" raised disabled tabindex="0">Enregistrer</VButton>
+        <VButton color="primary" raised disabled tabindex="0">Créer ce carnet</VButton>
       </VFlex>
     </div>
   </div>

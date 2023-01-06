@@ -62,8 +62,11 @@ watch(
   .list-view-item {
     @include vuero-r-card;
 
-    margin-bottom: 16px;
     padding: 16px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
 
     .list-view-item-inner {
       display: flex;
