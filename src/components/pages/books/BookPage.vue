@@ -169,6 +169,17 @@ watch(newMessageNbRows, () => {
               <VLoader v-if="isLoadingMessages" size="large" :active="true" translucent>
                 <div style="height: 100px">&nbsp;</div>
               </VLoader>
+              <VFlex
+                v-else-if="!messages.length"
+                flex-direction="column"
+                justify-content="center"
+                align-items="center"
+                class="book-empty"
+              >
+                <img src="/@src/assets/empty-book.svg" alt="Carnet vide" />
+                <h1>Ce carnet est encore vide</h1>
+                <h2>Écrivez le premier message</h2>
+              </VFlex>
               <div v-else class="book-messages">
                 <div
                   v-for="(message, i) in messages"
@@ -329,6 +340,22 @@ watch(newMessageNbRows, () => {
     width: 80%;
     position: relative;
     overflow: hidden;
+  }
+
+  .book-empty {
+    height: 100%;
+    img {
+      width: 80%;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 1em;
+      font-weight: 400;
+    }
   }
 
   .book-details-card {
